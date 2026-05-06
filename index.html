@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador de Normas - M-Risk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url("Fondo mrisk para pagina.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.65);
+            min-height: 100vh;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 220px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 60%;
+            height: 120px;
+            border-radius: 10px;
+            padding: 15px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-main {
+            background-color: #00c2d1;
+            color: black;
+        }
+
+        .btn-secondary {
+            background-color: #777;
+            color: white;
+        }
+
+        .resultados {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        .barra {
+            background: #1c6e86;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .barra-fill {
+            background: #00c2d1;
+            padding: 5px;
+        }
+
+        table {
+            width: 70%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="container">
+
+            <img src="Fondo mrisk para pagina.jpeg" class="logo">
+
+            <h1>Buscador de Normas</h1>
+            <p>Clasificación semántica de normativa sectorial</p>
+
+            <textarea id="texto" placeholder="Ingrese o pegue aquí el texto normativo..."></textarea><br>
+
+            <button class="btn-main" onclick="clasificar()">Clasificar normativa</button>
+            <button class="btn-secondary" onclick="limpiar()">Limpiar</button>
+
+            <div class="resultados" id="resultados">
+
+                <div class="card">
+                    <h2>Resultado principal</h2>
+                    <p id="grupo"></p>
+                    <p id="confianza"></p>
+                    <p id="estado"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Distribución semántica</h2>
+                    <div id="barras"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Leyes similares</h2>
+                    <table id="tabla"></table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function clasificar() {
+
+            let texto = document.getElementById("texto").value.toLowerCase();
+
+            if (texto.trim() === "") {
+                alert("Ingrese un texto");
+                return;
+            }
+
+            document.getElementById("resultados").style.display = "block";
+
+            let grupo = "Regulación general";
+            let confianza = 40;
+            let estado = "Revisar";
+
+            let barras = "";
+            let tabla = "";
+
+            if (texto.includes("export") || texto.includes("certificacion")) {
+
+                grupo = "Exportación y certificación";
+                confianza = 65;
+                estado = "Análisis válido";
+
+                barras = `
+    <div>Exportación</div><div class="barra"><div class="barra-fill" style="width:65%">65%</div></div>
+    <div>Sanidad</div><div class="barra"><div class="barra-fill" style="width:58%">58%</div></div>
+    <div>Trazabilidad</div><div class="barra"><div class="barra-fill" style="width:44%">44%</div></div>
+    `;
+
+                tabla = `
+    <tr><th>Norma</th><th>Foco</th><th>%</th></tr>
+    <tr><td>D.S. 430 LGPA</td><td>Exportación</td><td>65%</td></tr>
+    <tr><td>D.S. 319</td><td>Sanitario</td><td>59%</td></tr>
+    `;
+            }
+
+            else if (texto.includes("medicamento") || texto.includes("antimicrob")) {
+
+                grupo = "Sanidad e inocuidad";
+                confianza = 58;
+                estado = "Análisis válido";
+
+                barras = `
+    <div>Sanidad</div><div class="barra"><div class="barra-fill" style="width:58%">58%</div></div>
+    <div>Exportación</div><div class="barra"><div class="barra-fill" style="width:45%">45%</div></div>
+    `;
+
+                tabla = `
+    <tr><th>Norma</th><th>Foco</th><th>%</th></tr>
+    <tr><td>D.S. 319</td><td>Enfermedades</td><td>58%</td></tr>
+    `;
+            }
+
+            else {
+
+                grupo = "Fuera de dominio";
+                confianza = 13;
+                estado = "Revisar";
+
+                barras = `<div>Sin coincidencias relevantes</div>`;
+                tabla = `<tr><td>No aplica</td></tr>`;
+            }
+
+            document.getElementById("grupo").innerHTML = "<b>Grupo:</b> " + grupo;
+            document.getElementById("confianza").innerHTML = "<b>Confianza:</b> " + confianza + "%";
+            document.getElementById("estado").innerHTML = "<b>Estado:</b> " + estado;
+
+            document.getElementById("barras").innerHTML = barras;
+            document.getElementById("tabla").innerHTML = tabla;
+        }
+
+        function limpiar() {
+            document.getElementById("texto").value = "";
+            document.getElementById("resultados").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

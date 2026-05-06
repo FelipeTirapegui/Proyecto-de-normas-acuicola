@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>m-risk · Motor de Impacto Regulatorio</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Syne:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --brand:#005FA6; --brand-2:#1A7CC4; --teal:#0D9488;
+  --dark:#070E1A; --dark-2:#0C1526; --dark-3:#121F36;
+  --panel:#162440; --panel-2:#1C2E50;
+  --border:rgba(255,255,255,0.07); --border-2:rgba(0,95,166,0.35);
+  --text:#E2EAF4; --text-2:#8FA5C0; --text-3:#4A6480;
+  --red:#EF4444; --red-bg:rgba(239,68,68,0.1); --red-brd:rgba(239,68,68,0.3);
+  --yellow:#F59E0B; --yellow-bg:rgba(245,158,11,0.1); --yellow-brd:rgba(245,158,11,0.3);
+  --green:#10B981; --green-bg:rgba(16,185,129,0.1); --green-brd:rgba(16,185,129,0.3);
+  --blue-bg:rgba(0,95,166,0.12); --blue-brd:rgba(0,95,166,0.3);
+  --mono:'IBM Plex Mono',monospace; --disp:'Syne',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--disp);background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,95,166,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,95,166,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0;}
+
+header{position:sticky;top:0;z-index:100;background:rgba(7,14,26,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:52px;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-hex{width:26px;height:26px;background:var(--brand);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);}
+.logo-name{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--brand-2);letter-spacing:0.06em;}
+.logo-tag{font-family:var(--mono);font-size:10px;color:var(--text-3);letter-spacing:0.1em;}
+.chips{display:flex;gap:8px;align-items:center;}
+.chip{font-family:var(--mono);font-size:10px;color:var(--text-3);border:1px solid var(--border);padding:3px 10px;border-radius:2px;letter-spacing:0.08em;}
+.chip.live{color:var(--green);border-color:var(--green-brd);}
+
+main{position:relative;z-index:1;padding:28px 24px 60px;max-width:1600px;margin:0 auto;}
+.page-hdr{margin-bottom:24px;}
+.page-hdr h1{font-size:28px;font-weight:800;color:var(--text);line-height:1.1;letter-spacing:-0.02em;}
+.page-hdr h1 em{color:var(--brand-2);font-style:normal;}
+.page-hdr p{font-family:var(--mono);font-size:11px;color:var(--text-3);margin-top:6px;letter-spacing:0.08em;}
+
+.cols{display:grid;grid-template-columns:320px 1fr 1fr;gap:16px;align-items:start;}
+.col{background:var(--dark-2);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.col-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--border);background:var(--dark-3);}
+.col-title{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--text-2);letter-spacing:0.12em;text-transform:uppercase;}
+.col-icon{width:18px;height:18px;border:1px solid var(--border-2);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--brand-2);}
+.col-sub{font-family:var(--mono);font-size:9px;color:var(--text-3);letter-spacing:0.06em;}
+.col-body{padding:16px;}
+
+textarea{width:100%;background:var(--panel);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:var(--disp);font-size:13px;line-height:1.7;padding:14px;resize:vertical;min-height:220px;outline:none;transition:border-color 0.2s;}
+textarea:focus{border-color:var(--brand);}
+textarea::placeholder{color:var(--text-3);font-size:12px;}
+.tw{position:relative;}
+.cc{position:absolute;bottom:10px;right:12px;font-family:var(--mono);font-size:9px;color:var(--text-3);}
+
+.btn-row{display:flex;gap:8px;margin-top:10px;}
+.btn-p{flex:1;background:var(--brand);color:#fff;border:none;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.1em;padding:10px 16px;border-radius:3px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-p:hover{background:var(--brand-2);transform:translateY(-1px);}
+.btn-p.loading{opacity:0.7;pointer-events:none;}
+.btn-s{background:transparent;border:1px solid var(--border);color:var(--text-3);font-family:var(--mono);font-size:11px;letter-spacing:0.08em;padding:10px 14px;border-radius:3px;cursor:pointer;transition:all 0.15s;}
+.btn-s:hover{border-color:var(--text-3);color:var(--text);}
+
+.ejs{margin-top:14px;}
+.ejs-lbl{font-family:var(--mono);font-size:9px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.ejs-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.ec{font-family:var(--mono);font-size:10px;padding:4px 10px;border:1px solid var(--border);border-radius:2px;color:var(--text-3);cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:4px;}
+.ec:hover{border-color:var(--brand-2);color:var(--brand-2);}
+
+.empty{text-align:center;padding:48px 20px;}
+.empty-ico{width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:18px;color:var(--text-3);}
+.empty-txt{font-family:var(--mono);font-size:11px;color:var(--text-3);line-height:1.6;}
+
+.grupo-box{background:var(--panel);border:1px solid var(--border-2);border-radius:4px;padding:16px 18px;margin-bottom:16px;}
+.grupo-lbl{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--brand-2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.grupo-nom{font-size:18px;font-weight:700;color:var(--text);line-height:1.2;}
+.conf-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.conf-lbl{font-family:var(--mono);font-size:10px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;}
+.conf-val{font-family:var(--mono);font-size:22px;font-weight:600;}
+.prog{height:4px;background:var(--dark-3);border-radius:2px;overflow:hidden;margin-bottom:14px;}
+.prog-fill{height:100%;border-radius:2px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:600;padding:5px 12px;border-radius:2px;letter-spacing:0.06em;margin-bottom:16px;}
+.badge-ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-brd);}
+.badge-out{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-brd);}
+.bdot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+.dist-lbl{font-family:var(--mono);font-size:9px;font-weight:600;color:var(--text-3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.dist-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.dist-nm{font-family:var(--mono);font-size:11px;color:var(--text-2);width:140px;}
+.dist-trk{flex:1;height:3px;background:var(--dark-3);border-radius:2px;overflow:hidden;}
+.dist-fill{height:100%;border-radius:2px;background:var(--brand-2);}
+.dist-pct{font-family:var(--mono);font-size:11px;color:var(--brand-2);min-width:32px;text-align:right;}
+.imp-glob{background:var(--dark-3);border:1px solid var(--border);border-radius:4px;padding:12px 16px;margin-top:16px;display:flex;align-items:center;justify-content:space-between;}
+.imp-glob-lbl{font-family:var(--mono);font-size:9px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;}
+.imp-glob-chips{display:flex;gap:6px;}
+
+.sc{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:2px;letter-spacing:0.06em;}
+.sc-r{background:var(--red-bg);color:var(--red);border:1px solid var(--red-brd);}
+.sc-y{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-brd);}
+.sc-g{background:var(--green-bg);color:var(--green);border:1px solid var(--green-brd);}
+.sc-i{background:var(--blue-bg);color:var(--brand-2);border:1px solid var(--blue-brd);}
+
+.mtabs{display:flex;gap:4px;padding:12px 16px 0;}
+.mtab{font-family:var(--mono);font-size:10px;font-weight:600;padding:6px 14px;border-radius:3px 3px 0 0;border:1px solid var(--border);border-bottom:none;background:transparent;color:var(--text-3);cursor:pointer;transition:all 0.15s;letter-spacing:0.06em;display:flex;align-items:center;gap:6px;}
+.mtab:hover{color:var(--text);border-color:var(--border-2);}
+.mtab.active{background:var(--panel);border-color:var(--brand);color:var(--brand-2);}
+.tdot{width:6px;height:6px;border-radius:50%;}
+.mpanels{padding:0 16px 16px;}
+.mpanel{display:none;}
+.mpanel.active{display:block;}
+.mres{display:flex;gap:6px;padding:12px 16px 10px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+
+.icard{border:1px solid var(--border);border-left:3px solid transparent;border-radius:4px;padding:14px 16px;margin-bottom:10px;transition:all 0.2s;}
+.icard:hover{background:var(--panel);transform:translateY(-1px);}
+.icard.r{border-left-color:var(--red);}
+.icard.y{border-left-color:var(--yellow);}
+.icard.g{border-left-color:var(--green);}
+.icard.i{border-left-color:var(--brand);opacity:0.75;}
+.ctop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.cnorma{font-size:12px;font-weight:600;color:var(--text);line-height:1.4;flex:1;}
+.cestado{font-family:var(--mono);font-size:9px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;letter-spacing:0.06em;}
+.e-no{background:var(--red-bg);color:var(--red);}
+.e-par{background:var(--yellow-bg);color:var(--yellow);}
+.e-si{background:var(--green-bg);color:var(--green);}
+.e-inf{background:var(--blue-bg);color:var(--brand-2);}
+.cmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.ccat{font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:2px;font-weight:600;}
+.cc-ac{background:rgba(239,68,68,0.12);color:#F87171;}
+.cc-sa{background:rgba(245,158,11,0.12);color:#FCD34D;}
+.cc-in{background:rgba(0,95,166,0.18);color:#60A5FA;}
+.cc-et{background:rgba(13,148,136,0.12);color:#5EEAD4;}
+.cc-am{background:rgba(16,185,129,0.12);color:#6EE7B7;}
+.caccion{font-size:11px;color:var(--text-3);line-height:1.5;border-top:1px solid var(--border);padding-top:8px;margin-top:6px;}
+
+.c3empty{padding:60px 20px;text-align:center;}
+.c3e-ico{font-size:32px;margin-bottom:12px;opacity:0.3;}
+.c3e-txt{font-family:var(--mono);font-size:11px;color:var(--text-3);line-height:1.6;}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+.spin{width:16px;height:16px;border:2px solid rgba(255,255,255,0.15);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;}
+@keyframes fu{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.fu{animation:fu 0.35s ease both;}
+
+  /* ── MODALES ── */
+  .modal-ov{position:fixed;inset:0;z-index:999;background:rgba(5,12,24,0.92);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;opacity:0;pointer-events:none;transition:opacity 0.25s;}
+  .modal-ov.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--dark-2);border:1px solid var(--border-2);border-radius:6px;width:100%;max-width:860px;max-height:82vh;display:flex;flex-direction:column;transform:translateY(16px);transition:transform 0.25s;overflow:hidden;}
+  .modal-ov.open .modal{transform:translateY(0);}
+  .modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 16px;border-bottom:1px solid var(--border);flex-shrink:0;}
+  .modal-ttl{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--brand-2);letter-spacing:0.08em;}
+  .modal-ttl span{color:var(--text-3);font-weight:400;margin-left:8px;}
+  .modal-close{background:none;border:1px solid var(--border);color:var(--text-3);cursor:pointer;font-family:var(--mono);font-size:11px;padding:5px 12px;border-radius:3px;transition:all 0.15s;}
+  .modal-close:hover{border-color:var(--red);color:var(--red);}
+  .modal-filters{display:flex;gap:6px;padding:14px 24px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap;}
+  .filt-btn{font-family:var(--mono);font-size:10px;font-weight:600;padding:5px 14px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-3);cursor:pointer;letter-spacing:0.06em;transition:all 0.15s;}
+  .filt-btn:hover{color:var(--text);border-color:var(--border-2);}
+  .filt-btn.active{background:var(--blue-bg);border-color:var(--brand);color:var(--brand-2);}
+  .modal-body{overflow-y:auto;padding:8px 0;flex:1;}
+  .modal-body::-webkit-scrollbar{width:4px;}
+  .modal-body::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:2px;}
+  .cg-hdr{display:flex;align-items:center;gap:10px;padding:10px 24px 6px;position:sticky;top:0;background:var(--dark-2);z-index:1;}
+  .cg-name{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--brand-2);letter-spacing:0.1em;text-transform:uppercase;}
+  .cg-cnt{font-family:var(--mono);font-size:9px;color:var(--text-3);background:var(--dark-3);padding:2px 7px;border-radius:10px;}
+  .ci{display:flex;align-items:flex-start;gap:14px;padding:9px 24px;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.12s;}
+  .ci:hover{background:var(--panel);}
+  .ci-num{font-family:var(--mono);font-size:10px;color:var(--text-3);min-width:26px;padding-top:1px;}
+  .ci-ttl{font-size:12px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:3px;}
+  .ci-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .ci-org{font-family:var(--mono);font-size:9px;color:var(--text-3);}
+  .ci-cat{font-family:var(--mono);font-size:9px;padding:1px 7px;border-radius:2px;font-weight:600;}
+  .ci-ver{font-family:var(--mono);font-size:9px;color:var(--text-3);}
+  .ci-est{font-family:var(--mono);font-size:9px;padding:1px 7px;border-radius:2px;font-weight:600;}
+  .est-n{background:var(--yellow-bg);color:var(--yellow);}
+  .est-e{background:rgba(255,255,255,0.04);color:var(--text-3);}
+  /* Mercados modal */
+  .mcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px 24px;}
+  .mcard{background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--brand);border-radius:4px;padding:16px 20px;transition:all 0.2s;}
+  .mcard:hover{background:var(--panel-2);transform:translateY(-1px);}
+  .mcard-name{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--brand-2);margin-bottom:8px;letter-spacing:0.06em;}
+  .mcard-org{font-size:11px;color:var(--text-3);line-height:1.6;margin-bottom:10px;}
+  .mcard-stats{display:flex;gap:8px;flex-wrap:wrap;}
+  .mstat{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:2px;background:var(--blue-bg);color:var(--brand-2);font-weight:600;}
+  .mstat.new{background:var(--yellow-bg);color:var(--yellow);}
+
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><img alt="m-risk" src="mrisk_logo.png" style="height:28px;"/></div>
+<div class="chips">
+<div class="chip">Sector Acuicultura</div>
+<div class="chip" id="chip-corpus" onclick="openCorpus()" style="cursor:pointer;border-color:rgba(0,95,166,0.5);color:var(--brand-2)">40 normas ↗</div>
+<div class="chip" id="chip-mercados" onclick="openMercados()" style="cursor:pointer;border-color:rgba(0,95,166,0.5);color:var(--brand-2)">4 mercados ↗</div>
+</div>
+</header>
+<main>
+<div class="page-hdr">
+<h1>Motor de <em>Impacto</em> Regulatorio</h1>
+<p>// INGRESA UN TEXTO NORMATIVO · EL SISTEMA EVALUA IMPACTO EN CHILE · USA · JAPON · BRASIL</p>
+</div>
+<div class="cols">
+<!-- COL 1 -->
+<div class="col">
+<div class="col-hdr">
+<div class="col-title"><div class="col-icon">01</div>CUERPO NORMATIVO</div>
+<div class="col-sub">Ingreso de texto</div>
+</div>
+<div class="col-body">
+<div class="tw">
+<textarea id="tx" placeholder="Pega aqui el articulo o texto normativo a clasificar...
+
+Ejemplo: 'Los centros de cultivo de salmonidos deberan realizar monitoreos trimestrales del fondo marino...'"></textarea>
+<span class="cc" id="cc">0 caracteres</span>
+</div>
+<div class="btn-row">
+<button class="btn-p" id="btn-c" onclick="clasificar()">
+<span id="bi">+</span><span id="bt">CLASIFICAR</span>
+</button>
+<button class="btn-s" onclick="limpiar()">limpiar</button>
+</div>
+<div class="ejs">
+<div class="ejs-lbl">Ejemplos rapidos</div>
+<div class="ejs-chips">
+<div class="ec" onclick="ej('exp')">salmon exportacion</div>
+<div class="ec" onclick="ej('anti')">antimicrobianos</div>
+<div class="ec" onclick="ej('traz')">trazabilidad</div>
+<div class="ec" onclick="ej('amb')">medio ambiente</div>
+<div class="ec" onclick="ej('out')">fuera de dominio</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COL 2 -->
+<div class="col">
+<div class="col-hdr">
+<div class="col-title"><div class="col-icon">02</div>INGRESO DE LEY</div>
+<div class="col-sub">Analisis semantico</div>
+</div>
+<div class="col-body" id="c2">
+<div class="empty"><div class="empty-ico">!</div><div class="empty-txt">Ingresa un texto normativo<br/>y presiona Clasificar</div></div>
+</div>
+</div>
+<!-- COL 3 -->
+<div class="col">
+<div class="col-hdr">
+<div class="col-title"><div class="col-icon">03</div>IMPACTO POR MERCADO</div>
+<div class="col-sub">Evaluacion regulatoria</div>
+</div>
+<div id="c3">
+<div class="c3empty"><div class="c3e-ico">o</div><div class="c3e-txt">El impacto regulatorio<br/>aparecera aqui</div></div>
+</div>
+</div>
+</div>
+</main>
+<script>
+const CORPUS=[
+  {id:"c1",grupo:"C1 - Proteccion Ambiental",cats:["Ambiental / RAMA","Regulacion pesquera","Exportacion"],pesos:[0.64,0.48,0.32],kw:["fondo marino","sulfuro","materia organica","bentonica","monitoreo","SERNAPESCA","cultivo","salmonidos","ambiental","sedimento","biomasa","jaulas"],imp:{USA:{estado:"Cubierto",impacto:"Bajo",riesgo:"Bajo",norma:"21 CFR Part 123",accion:"Sin accion requerida. Cumplimiento ambiental chileno es comparable."},Japon:{estado:"Parcialmente cubierto",impacto:"Medio",riesgo:"Medio",norma:"Food Sanitation Act",accion:"Revisar diferencias de alcance ambiental con el mercado japones."},Brasil:{estado:"Parcialmente cubierto",impacto:"Medio",riesgo:"Medio",norma:"Decreto 9.013/2017",accion:"Verificar requisitos ambientales MAPA para establecimientos exportadores."}}},
+  {id:"c2",grupo:"C2 - Inocuidad Alimentaria",cats:["Inocuidad / HACCP","Control residuos","Certificacion"],pesos:[0.78,0.61,0.44],kw:["inocuidad","haccp","residuos","antibioticos","antimicrobianos","medicamentos","veterinarios","limites","tolerancia","contaminantes","alimento","seguridad"],imp:{USA:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"21 CFR Part 123 + FSMA",accion:"Revisar y documentar brecha antes del proximo embarque."},Japon:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"LMR Positive List MHLW",accion:"CRITICO: Positive List japones exige LMR especifico por molecula. Verificar todos los medicamentos usados."},Brasil:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"PNCR MAPA",accion:"Brasil realiza muestreos en puerto. Documentar brecha antes del embarque."}}},
+  {id:"c3",grupo:"C3 - Sanitario / Certificacion",cats:["Sanitario","Exportacion","Habilitacion"],pesos:[0.72,0.58,0.41],kw:["sanitario","certificado","sernapesca","habilitacion","planta","autorizacion","exportacion","inspeccion","enfermedades","isa","srs","resa"],imp:{USA:{estado:"Cubierto",impacto:"Bajo",riesgo:"Bajo",norma:"FDA Registration",accion:"Sin accion requerida. Confirmar registro FDA vigente."},Japon:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"Certificado Sanitario MHLW",accion:"Gap de especificidad. Verificar si certificado SERNAPESCA cubre requisitos especificos del MHLW."},Brasil:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"IN MAPA 1/2017",accion:"Verificar habilitacion de planta ante DIPOA antes del proximo embarque."}}},
+  {id:"c4",grupo:"C4 - Trazabilidad y Origen",cats:["Trazabilidad","Origen legal","Registro"],pesos:[0.81,0.66,0.49],kw:["trazabilidad","origen","acreditacion","registro","cadena","produccion","informacion","pesca","acuicultura","electronico","sistema"],imp:{USA:{estado:"Parcialmente cubierto",impacto:"Medio",riesgo:"Medio",norma:"FSMA FSVP",accion:"Revisar requisitos trazabilidad FSMA. Importador USA necesita evidencia de cumplimiento."},Japon:{estado:"Parcialmente cubierto",impacto:"Medio",riesgo:"Medio",norma:"Food Sanitation Act 2024",accion:"Portaria 2024 actualiza requisitos. Documentar cadena de trazabilidad completa."},Brasil:{estado:"Cubierto",impacto:"Bajo",riesgo:"Bajo",norma:"Portaria MAPA 884/2023",accion:"Sin accion urgente. Monitorear evolucion de exigencias MoluBiS."}}},
+  {id:"c5",grupo:"C5 - Etiquetado y Rotulado",cats:["Etiquetado","Rotulado","Declaraciones"],pesos:[0.75,0.60,0.38],kw:["etiquetado","rotulado","etiqueta","nombre","ingredientes","nutricional","alergenos","fecha","vencimiento","idioma","declaracion","peso"],imp:{USA:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"21 CFR Part 101 + COOL",accion:"Etiquetado USA exige ingles, COOL y declaracion de alergenos. Revisar antes del embarque."},Japon:{estado:"No cubierto",impacto:"Alto",riesgo:"Alto",norma:"JAS + Ley Pesos y Medidas",accion:"Etiquetado debe estar en japones. Responsabilidad del importador japones. Coordinar con socio local."},Brasil:{estado:"Parcialmente cubierto",impacto:"Medio",riesgo:"Medio",norma:"RDC ANVISA 727/2022",accion:"Rotulado en portugues obligatorio. Verificar declaracion de alergenos segun RDC 727."}}},
+];
+
+const EJS={
+  exp:"Los centros de cultivo de salmonidos deberan obtener la Autorizacion de Origen Legal emitida por SERNAPESCA para cada embarque de exportacion. Dicha autorizacion certifica el cumplimiento de la normativa pesquera nacional y es requisito previo al despacho de cualquier producto acuicola al mercado internacional.",
+  anti:"Se prohibe el uso de antimicrobianos con fines profilacticos en centros de cultivo de salmonidos. El uso terapeutico debera ser prescrito por medico veterinario y registrado en el sistema de trazabilidad de SERNAPESCA, indicando molecula, dosis, periodo de resguardo y lote de peces tratados.",
+  traz:"Los titulares de concesiones acuicolas deberan registrar en el sistema electronico de SERNAPESCA toda la informacion relativa a la cadena de produccion, desde el ingreso de ovas hasta el despacho final del producto. El registro debera incluir la acreditacion de origen legal de todos los recursos utilizados.",
+  amb:"Los centros de cultivo de salmonidos deberan realizar monitoreos trimestrales del fondo marino bajo las jaulas, midiendo parametros de sulfuro de hidrogeno, materia organica y fauna bentonica. Los resultados deberan ser reportados a SERNAPESCA dentro de los 30 dias siguientes a cada muestreo.",
+  out:"Las empresas mineras que exploten yacimientos de cobre deberan constituir una garantia ambiental equivalente al 10% del costo estimado del plan de cierre, la que debera ser aprobada por el Servicio Nacional de Geologia y Mineria antes del inicio de las operaciones de extraccion.",
+};
+
+function ej(k){document.getElementById('tx').value=EJS[k];upd();}
+function upd(){document.getElementById('cc').textContent=document.getElementById('tx').value.length+' caracteres';}
+document.getElementById('tx').addEventListener('input',upd);
+
+function limpiar(){
+  document.getElementById('tx').value='';upd();
+  document.getElementById('c2').innerHTML='<div class="empty"><div class="empty-ico">!</div><div class="empty-txt">Ingresa un texto normativo<br>y presiona Clasificar</div></div>';
+  document.getElementById('c3').innerHTML='<div class="c3empty"><div class="c3e-ico">o</div><div class="c3e-txt">El impacto regulatorio<br>aparecera aqui</div></div>';
+}
+
+function sim(txt,c){
+  const t=txt.toLowerCase();
+  let h=0;
+  for(const k of c.kw)if(t.includes(k.toLowerCase()))h++;
+  return h/c.kw.length;
+}
+
+function clasificar(){
+  const txt=document.getElementById('tx').value.trim();
+  if(!txt)return;
+  const btn=document.getElementById('btn-c');
+  btn.classList.add('loading');
+  document.getElementById('bi').innerHTML='<div class="spin"></div>';
+  document.getElementById('bt').textContent='ANALIZANDO...';
+  setTimeout(()=>{
+    const scores=CORPUS.map(c=>({...c,s:sim(txt,c)})).sort((a,b)=>b.s-a.s);
+    const top=scores[0];
+    const conf=Math.round(top.s*100);
+    const ok=conf>=15;
+    btn.classList.remove('loading');
+    document.getElementById('bi').textContent='+';
+    document.getElementById('bt').textContent='CLASIFICAR';
+    r2(top,conf,ok);
+    ok?r3(top):r3fuera();
+  },900);
+}
+
+function r2(top,conf,ok){
+  const col=conf>=55?'var(--green)':conf>=25?'var(--yellow)':'var(--red)';
+  let dist=top.cats.map((c,i)=>`<div class="dist-row fu" style="animation-delay:${0.3+i*0.08}s"><span class="dist-nm">${c}</span><div class="dist-trk"><div class="dist-fill" style="width:${top.pesos[i]*100}%"></div></div><span class="dist-pct">${Math.round(top.pesos[i]*100)}%</span></div>`).join('');
+  let ro=0,ye=0,gr=0;
+  Object.values(top.imp).forEach(m=>{if(m.impacto==='Alto')ro++;else if(m.impacto==='Medio')ye++;else gr++;});
+  document.getElementById('c2').innerHTML=`
+    <div class="grupo-box fu"><div class="grupo-lbl">GRUPO NORMATIVO</div><div class="grupo-nom">${ok?top.grupo:'Sin clasificacion - Fuera de dominio'}</div></div>
+    <div class="conf-row fu" style="animation-delay:0.1s"><span class="conf-lbl">CONFIANZA</span><span class="conf-val" style="color:${col}">${conf}%</span></div>
+    <div class="prog"><div class="prog-fill" style="width:${conf}%;background:${col}"></div></div>
+    <div class="fu" style="animation-delay:0.2s"><span class="badge ${ok?'badge-ok':'badge-out'}"><span class="bdot"></span>${ok?'ANALISIS VALIDO':'TEXTO FUERA DEL DOMINIO NORMATIVO ACUICOLA'}</span></div>
+    ${ok?`<div class="dist-lbl">DISTRIBUCION SEMANTICA</div>${dist}<div class="imp-glob fu" style="animation-delay:0.55s"><span class="imp-glob-lbl">IMPACTO GLOBAL</span><div class="imp-glob-chips">${ro>0?`<span class="sc sc-r">ROJO ${ro}</span>`:''} ${ye>0?`<span class="sc sc-y">AMARILLO ${ye}</span>`:''} ${gr>0?`<span class="sc sc-g">VERDE ${gr}</span>`:''}</div></div>`:
+    `<div class="dist-lbl">SIMILITUD MAXIMA AL CORPUS</div><div class="dist-row"><span class="dist-nm">Similitud maxima</span><div class="dist-trk"><div class="dist-fill" style="width:${conf}%;background:var(--red)"></div></div><span class="dist-pct" style="color:var(--red)">${conf}%</span></div>`}`;
+}
+
+function eclass(e){
+  if(e==='No cubierto')return['r','e-no','!! No cubierto'];
+  if(e==='Parcialmente cubierto')return['y','e-par','~~ Parcial'];
+  if(e==='Cubierto')return['g','e-si','OK Cubierto'];
+  return['i','e-inf','-- Info'];
+}
+function ichip(i){
+  if(i==='Alto')return'<span class="sc sc-r">ROJO</span>';
+  if(i==='Medio')return'<span class="sc sc-y">AMARILLO</span>';
+  if(i==='Bajo')return'<span class="sc sc-g">VERDE</span>';
+  return'<span class="sc sc-i">INFO</span>';
+}
+function dotcolor(i){return i==='Alto'?'var(--red)':i==='Medio'?'var(--yellow)':'var(--green)';}
+
+function rcard(m,d){
+  const[cc,ec,el]=eclass(d.estado);
+  return`<div class="icard ${cc} fu"><div class="ctop"><div class="cnorma">${d.norma}</div><span class="cestado ${ec}">${el}</span></div><div class="cmeta"><span class="ccat cc-in">${m}</span>${ichip(d.impacto)}<span style="font-family:var(--mono);font-size:9px;color:var(--text-3)">Riesgo: ${d.riesgo}</span></div><div class="caccion">${d.accion}</div></div>`;
+}
+
+function r3(top){
+  const ms=['USA','Japon','Brasil'];
+  const tabs=ms.map((m,i)=>{const d=top.imp[m];const dc=dotcolor(d?.impacto||'Bajo');return`<button class="mtab ${i===0?'active':''}" onclick="showM('${m}',this)"><span class="tdot" style="background:${dc}"></span>${m}</button>`;}).join('');
+  const panels=ms.map((m,i)=>{const d=top.imp[m];return`<div class="mpanel ${i===0?'active':''}" id="mp-${m}"><div class="mres"><span class="sc sc-i">${m}</span>${ichip(d?.impacto)}<span style="font-family:var(--mono);font-size:9px;color:var(--text-3);padding:3px 0">Riesgo: ${d?.riesgo}</span></div><div style="padding:12px 16px">${rcard(m,d)}</div></div>`;}).join('');
+  document.getElementById('c3').innerHTML=`<div class="mtabs">${tabs}</div><div class="mpanels">${panels}</div>`;
+}
+
+function r3fuera(){
+  document.getElementById('c3').innerHTML='<div class="c3empty"><div class="c3e-ico">!</div><div class="c3e-txt">No se encontraron normativas<br>relacionadas en el corpus acuicola.</div></div>';
+}
+
+
+const CORPUS_DATA = [
+  {n:1,m:"Chile",t:"LGPA Ley 18.892",o:"SUBPESCA/SERNAPESCA",c:"Acceso",v:"1989",e:"Existente"},
+  {n:2,m:"Chile",t:"DS 430/1991 LGPA Texto Refundido",o:"SUBPESCA",c:"Acceso",v:"1991",e:"Existente"},
+  {n:3,m:"Chile",t:"DS 290/1993 Reglamento Concesiones",o:"SUBPESCA",c:"Acceso",v:"1993",e:"Existente"},
+  {n:4,m:"Chile",t:"DS 320/2001 Reglamento Ambiental RAMA",o:"SUBPESCA",c:"Ambiental",v:"2001",e:"Existente"},
+  {n:5,m:"Chile",t:"DS 319/2002 Enfermedades Alto Riesgo RESA",o:"SERNAPESCA",c:"Sanitario",v:"2002",e:"Existente"},
+  {n:6,m:"Chile",t:"DS 345/2005 Reglamento Plagas REPLA",o:"SERNAPESCA",c:"Sanitario",v:"2005",e:"Existente"},
+  {n:7,m:"Chile",t:"DS 49/2006 Centros Acopio y Faenamiento",o:"SERNAPESCA",c:"Inocuidad",v:"2006",e:"Existente"},
+  {n:8,m:"Chile",t:"DS 72/2011 Certificacion Sanitaria Exportacion",o:"SERNAPESCA",c:"Sanitario",v:"2011",e:"Existente"},
+  {n:9,m:"Chile",t:"DS 40/2012 Reglamento SEIA",o:"MMA/SEA",c:"Ambiental",v:"2012",e:"Existente"},
+  {n:10,m:"Chile",t:"DS 129/2013 Trazabilidad Acreditacion Origen",o:"SERNAPESCA",c:"Inocuidad",v:"2013",e:"Existente"},
+  {n:11,m:"Chile",t:"DS 13/2015 Reglamento Ley 20.606",o:"MINSAL",c:"Etiquetado",v:"2015",e:"Existente"},
+  {n:12,m:"Chile",t:"Ley 20.606 Etiquetado Nutricional",o:"MINSAL",c:"Etiquetado",v:"2012",e:"Existente"},
+  {n:13,m:"Chile",t:"Ley 21.410 Desechos Fondos Marinos",o:"SERNAPESCA",c:"Ambiental",v:"2022",e:"Existente"},
+  {n:14,m:"Chile",t:"DS 977/1996 RSA Reglamento Sanitario Alimentos",o:"MINSAL",c:"Etiquetado",v:"1996",e:"Existente"},
+  {n:15,m:"Chile",t:"NCh 2840 Rotulado Productos Pesca",o:"INN/SERNAPESCA",c:"Etiquetado",v:"2003",e:"Existente"},
+  {n:16,m:"Chile",t:"Resolucion 5125/2016 Manual Sanidad Pesquera",o:"SERNAPESCA",c:"Etiquetado",v:"2016",e:"Existente"},
+  {n:17,m:"Chile",t:"Autorizacion Origen Legal",o:"SERNAPESCA",c:"Acceso",v:"Vigente",e:"Existente"},
+  {n:18,m:"USA",t:"21 CFR Part 123 HACCP Productos Pesca",o:"FDA",c:"Inocuidad",v:"2023",e:"Existente"},
+  {n:19,m:"USA",t:"FSMA Food Safety Modernization Act",o:"FDA",c:"Inocuidad",v:"2016",e:"Existente"},
+  {n:20,m:"USA",t:"21 CFR Part 1 Prior Notice Importacion",o:"FDA",c:"Acceso-Destino",v:"Vigente",e:"Existente"},
+  {n:21,m:"USA",t:"FSVP Foreign Supplier Verification Program",o:"FDA",c:"Acceso-Destino",v:"2017",e:"Existente"},
+  {n:22,m:"USA",t:"21 CFR Part 101 Food Labeling",o:"FDA",c:"Etiquetado",v:"2023",e:"Existente"},
+  {n:23,m:"USA",t:"COOL Country of Origin Labeling",o:"USDA-AMS",c:"Etiquetado",v:"Vigente",e:"Existente"},
+  {n:24,m:"USA",t:"Antibiotic Residue Tolerance Levels",o:"FDA",c:"Inocuidad",v:"Vigente",e:"Existente"},
+  {n:25,m:"USA",t:"Import Alert 16-131",o:"FDA",c:"Acceso",v:"Vigente",e:"Existente"},
+  {n:26,m:"Japon",t:"Food Sanitation Act Shokuhin Eisei Ho",o:"MHLW",c:"Inocuidad",v:"2024",e:"Existente"},
+  {n:27,m:"Japon",t:"Lista Positiva Materiales Contacto 2024",o:"MHLW",c:"Inocuidad",v:"2024",e:"Nuevo"},
+  {n:28,m:"Japon",t:"Certificado Sanitario MHLW",o:"MHLW",c:"Sanitario",v:"Vigente",e:"Existente"},
+  {n:29,m:"Japon",t:"Inspeccion Cuarentena Puerto Entrada",o:"MHLW/Aduana",c:"Acceso-Destino",v:"Vigente",e:"Existente"},
+  {n:30,m:"Japon",t:"Importador Domiciliado Japon",o:"MHLW",c:"Acceso-Destino",v:"Vigente",e:"Existente"},
+  {n:31,m:"Japon",t:"Etiquetado JAS y Ley Pesos y Medidas",o:"CAA/MAFF",c:"Etiquetado",v:"Vigente",e:"Existente"},
+  {n:32,m:"Japon",t:"LMR Pesticidas Medicamentos Positive List",o:"MHLW",c:"Inocuidad",v:"Vigente",e:"Existente"},
+  {n:33,m:"Japon",t:"Restricciones Sustancias Quimicas Clase I 2024",o:"MHLW",c:"Inocuidad",v:"2024",e:"Nuevo"},
+  {n:34,m:"Brasil",t:"IN MAPA 1/2017 Habilitacion Sanitaria Planta",o:"MAPA/DIPOA",c:"Acceso",v:"2017",e:"Existente"},
+  {n:35,m:"Brasil",t:"Decreto 9.013/2017 RIISPOA",o:"MAPA/DIPOA",c:"Inocuidad",v:"2020",e:"Existente"},
+  {n:36,m:"Brasil",t:"Licencia Importacion LI DIPOA",o:"MAPA/DIPOA",c:"Acceso-Destino",v:"Vigente",e:"Existente"},
+  {n:37,m:"Brasil",t:"RDC ANVISA 727/2022 Rotulado Alergenos",o:"ANVISA",c:"Etiquetado",v:"2022",e:"Existente"},
+  {n:38,m:"Brasil",t:"IN MAPA 22/2005 Etiquetado Pesca",o:"MAPA",c:"Etiquetado",v:"2021",e:"Existente"},
+  {n:39,m:"Brasil",t:"PNCR Programa Control Residuos",o:"MAPA",c:"Inocuidad",v:"Vigente",e:"Existente"},
+  {n:40,m:"Brasil",t:"Portaria MAPA 884/2023 MoluBiS Trazabilidad",o:"MAPA",c:"Inocuidad",v:"2023",e:"Nuevo"},
+];
+
+const CAT_CSS={"Acceso":"cc-ac","Acceso-Destino":"cc-ac","Sanitario":"cc-sa","Inocuidad":"cc-in","Etiquetado":"cc-et","Ambiental":"cc-am"};
+
+function openCorpus(){document.getElementById('modal-corpus').classList.add('open');renderCorpus('Todos');}
+function closeCorpus(){document.getElementById('modal-corpus').classList.remove('open');}
+function openMercados(){document.getElementById('modal-mercados').classList.add('open');}
+function closeMercados(){document.getElementById('modal-mercados').classList.remove('open');}
+
+function filtCorpus(m,btn){
+  document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCorpus(m);
+}
+
+function renderCorpus(filtro){
+  const data=filtro==='Todos'?CORPUS_DATA:CORPUS_DATA.filter(n=>n.m===filtro);
+  const mercados=[...new Set(data.map(n=>n.m))];
+  document.getElementById('corpus-body').innerHTML=mercados.map(m=>{
+    const items=data.filter(n=>n.m===m);
+    return`<div><div class="cg-hdr"><span class="cg-name">${m}</span><span class="cg-cnt">${items.length} normas</span></div>
+    ${items.map(item=>`<div class="ci"><span class="ci-num">${String(item.n).padStart(2,'0')}</span>
+    <div><div class="ci-ttl">${item.t}</div>
+    <div class="ci-meta"><span class="ci-org">${item.o}</span>
+    <span class="ci-cat ${CAT_CSS[item.c]||'cc-in'}">${item.c}</span>
+    <span class="ci-ver">${item.v}</span>
+    <span class="ci-est ${item.e==='Nuevo'?'est-n':'est-e'}">${item.e}</span>
+    </div></div></div>`).join('')}</div>`;
+  }).join('');
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCorpus();closeMercados();}});
+
+function showM(m,btn){
+  document.querySelectorAll('.mtab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  const p=document.getElementById('mp-'+m);
+  if(p)p.classList.add('active');
+}
+</script>
+<!-- MODAL CORPUS -->
+<div class="modal-ov" id="modal-corpus" onclick="if(event.target===this)closeCorpus()">
+<div class="modal">
+<div class="modal-hdr">
+<div class="modal-ttl">CORPUS NORMATIVO <span>40 normas · 4 mercados</span></div>
+<button class="modal-close" onclick="closeCorpus()">x Cerrar</button>
+</div>
+<div class="modal-filters">
+<button class="filt-btn active" onclick="filtCorpus('Todos',this)">Todos (40)</button>
+<button class="filt-btn" onclick="filtCorpus('Chile',this)">Chile (17)</button>
+<button class="filt-btn" onclick="filtCorpus('USA',this)">USA (8)</button>
+<button class="filt-btn" onclick="filtCorpus('Japon',this)">Japon (8)</button>
+<button class="filt-btn" onclick="filtCorpus('Brasil',this)">Brasil (7)</button>
+</div>
+<div class="modal-body" id="corpus-body"></div>
+</div>
+</div>
+<!-- MODAL MERCADOS -->
+<div class="modal-ov" id="modal-mercados" onclick="if(event.target===this)closeMercados()">
+<div class="modal" style="max-width:720px">
+<div class="modal-hdr">
+<div class="modal-ttl">MERCADOS DISPONIBLES <span>4 mercados · exportacion salmon</span></div>
+<button class="modal-close" onclick="closeMercados()">x Cerrar</button>
+</div>
+<div class="mcard-grid">
+<div class="mcard" style="border-top-color:#0D9488">
+<div class="mcard-name">Chile (Origen)</div>
+<div class="mcard-org">SERNAPESCA · SUBPESCA · MMA · MINSAL</div>
+<div class="mcard-stats"><span class="mstat">17 normas</span><span class="mstat">Origen</span><span class="mstat">Acceso · Sanitario · Ambiental</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-name">USA</div>
+<div class="mcard-org">FDA · USDA-AMS · USDA-FSIS</div>
+<div class="mcard-stats"><span class="mstat">8 normas</span><span class="mstat">Destino</span><span class="mstat">3 gaps exportador</span><span class="mstat">2 oblig. destino</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-name">Japon</div>
+<div class="mcard-org">MHLW · CAA · MAFF · Aduana</div>
+<div class="mcard-stats"><span class="mstat">8 normas</span><span class="mstat">Destino</span><span class="mstat">5 gaps exportador</span><span class="mstat">2 oblig. destino</span><span class="mstat new">2 normas nuevas</span></div>
+</div>
+<div class="mcard">
+<div class="mcard-name">Brasil</div>
+<div class="mcard-org">MAPA · DIPOA · ANVISA</div>
+<div class="mcard-stats"><span class="mstat">7 normas</span><span class="mstat">Destino</span><span class="mstat">2 gaps exportador</span><span class="mstat">1 oblig. destino</span><span class="mstat new">1 norma nueva</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

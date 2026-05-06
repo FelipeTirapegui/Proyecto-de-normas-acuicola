@@ -1,0 +1,866 @@
+[
+  {
+    "idx": 0,
+    "id_norma": "13315",
+    "titulo_norma": "Ley general de pesca y acuicultura",
+    "num_articulo": "0",
+    "tipo": "preambulo",
+    "n_chars": 1424,
+    "texto_preview": "FIJA EL TEXTO REFUNDIDO, COORDINADO Y SISTEMATIZADO DE LA LEY N° 18.892, DE 1989 Y SUS MODIFICACIONES, LEY GENERAL DE PE"
+  },
+  {
+    "idx": 1,
+    "id_norma": "13315",
+    "titulo_norma": "Ley general de pesca y acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 670,
+    "texto_preview": "Art. 1 Nº 5\nD.O. 29.09.2012\nI\nDE LOS OBSERVADORES CIENTÍFICOS\nTITULO IX\nINFRACCIONES, SANCIONES Y PROCEDIMIENTOS\nTITULO "
+  },
+  {
+    "idx": 2,
+    "id_norma": "30667",
+    "titulo_norma": "Ley sobre bases generales del medio ambiente",
+    "num_articulo": "0",
+    "tipo": "texto_completo",
+    "n_chars": 3184,
+    "texto_preview": "APRUEBA LEY SOBRE BASES GENERALES DEL MEDIO AMBIENTE\nTeniendo presente que el H. Congreso Nacional ha dado su aprobación"
+  },
+  {
+    "idx": 3,
+    "id_norma": "192512",
+    "titulo_norma": "Reglamento ambiental para la acuicultura",
+    "num_articulo": "0",
+    "tipo": "texto_completo",
+    "n_chars": 2960,
+    "texto_preview": "REGLAMENTO AMBIENTAL PARA LA ACUICULTURA\nNúm. 320.- Santiago, 24 de agosto de 2001.- Visto: Lo informado por la Subsecre"
+  },
+  {
+    "idx": 4,
+    "id_norma": "194194",
+    "titulo_norma": "Reglamento de medidas de protección, control y erradicación de enfermedades de alto riesgo para las especies hidrobiológicas",
+    "num_articulo": "0",
+    "tipo": "preambulo",
+    "n_chars": 1435,
+    "texto_preview": "APRUEBA REGLAMENTO DE MEDIDAS DE PROTECCION, CONTROL Y ERRADICACION DE ENFERMEDADES DE ALTO RIESGO PARA LAS ESPECIES HID"
+  },
+  {
+    "idx": 5,
+    "id_norma": "194194",
+    "titulo_norma": "Reglamento de medidas de protección, control y erradicación de enfermedades de alto riesgo para las especies hidrobiológicas",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 174,
+    "texto_preview": "Artículo 1º. Apruébase el siguiente \"Reglamento sobre las medidas de protección, control y erradicación de las enfermeda"
+  },
+  {
+    "idx": 6,
+    "id_norma": "194194",
+    "titulo_norma": "Reglamento de medidas de protección, control y erradicación de enfermedades de alto riesgo para las especies hidrobiológicas",
+    "num_articulo": "2",
+    "tipo": "articulo",
+    "n_chars": 391,
+    "texto_preview": "Artículo 2º. Derógase el decreto supremo Nº 162 de 1985 del Ministerio de Economía, Fomento y Reconstrucción.\nAnótese, t"
+  },
+  {
+    "idx": 7,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "0",
+    "tipo": "preambulo",
+    "n_chars": 588,
+    "texto_preview": "REGLAMENTO DE CONCESIONES DE ACUICULTURA\nDecreto 202\nArt. UNICO N° 1\nD.O. 20.08.2011\nNúm. 290.- Santiago, 28 de Mayo de "
+  },
+  {
+    "idx": 8,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 5211,
+    "texto_preview": "Artículo 1°.- Para la aplicación del presente reglamento se entenderá por:\n1. Acuicultura: Actividad que tiene por objet"
+  },
+  {
+    "idx": 9,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "2",
+    "tipo": "articulo",
+    "n_chars": 483,
+    "texto_preview": "Artículo 2°.- Las disposiciones de este reglamento rigen para las concesiones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 4 a)\nD"
+  },
+  {
+    "idx": 10,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "3",
+    "tipo": "articulo",
+    "n_chars": 427,
+    "texto_preview": "Artículo 3°.- La concesión de\nDecreto 202, ECONOMÍA\nArt. UNICO N° 5\nD.O. 20.08.2011\nacuicultura tienen por objeto la rea"
+  },
+  {
+    "idx": 11,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "4",
+    "tipo": "articulo",
+    "n_chars": 226,
+    "texto_preview": "Artículo 4°.- Las clases de concesiones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 6\nD.O. 20.08.2011\nde acuicultura reconocidas"
+  },
+  {
+    "idx": 12,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "5",
+    "tipo": "articulo",
+    "n_chars": 603,
+    "texto_preview": "Artículo 5°.- Sólo podrán ser concesionarios de\nDecreto 202, ECONOMÍA\nArt. UNICO N° 7\nD.O. 20.08.2011\nacuicultura las si"
+  },
+  {
+    "idx": 13,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "6",
+    "tipo": "articulo",
+    "n_chars": 270,
+    "texto_preview": "Artículo 6°.- Los concesionarios\nDecreto 202, ECONOMÍA\nArt. UNICO N° 8\nD.O. 20.08.2011\npodrán realizar en los sectores o"
+  },
+  {
+    "idx": 14,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "7",
+    "tipo": "articulo",
+    "n_chars": 881,
+    "texto_preview": "Artículo 7°.- Las mejoras o construcciones introducidas por el concesionario\nDecreto 202, ECONOMÍA\nArt. UNICO N° 9 a)\nD."
+  },
+  {
+    "idx": 15,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "8",
+    "tipo": "articulo",
+    "n_chars": 330,
+    "texto_preview": "Artículo 8°.- El concesionario\nDecreto 202, ECONOMÍA\nArt. UNICO N° 10\nD.O. 20.08.2011\nresponderá preferentemente con las"
+  },
+  {
+    "idx": 16,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "9",
+    "tipo": "articulo",
+    "n_chars": 1802,
+    "texto_preview": "Artículo 9°.- Las concesiones de acuicultura podrán comprender mejoras fiscales sólo en el caso que en el Informe Técnic"
+  },
+  {
+    "idx": 17,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "10",
+    "tipo": "articulo",
+    "n_chars": 1490,
+    "texto_preview": "Artículo 10°.- Las solicitudes de concesiones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 11 a)\nD.O. 20.08.2011\nde acuicultura d"
+  },
+  {
+    "idx": 18,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 2892,
+    "texto_preview": "Art. 1º Nº 2 a)\nD.O. 11.10.2006\nartas.\n2. De la concesión de acuicultura, en escala 1:1.000 o 1:5.000,\nDecreto 202, ECON"
+  },
+  {
+    "idx": 19,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 45,
+    "texto_preview": "Art. 1° N° 4\nD.O. 07.12.2002\nDTO 50, ECONOMIA"
+  },
+  {
+    "idx": 20,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 1112,
+    "texto_preview": "Art. 1º Nº 2 b)\nD.O. 11.10.2006\nrsonas jurídicas que se hubieren Inscrito\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 2, i)\nD.O."
+  },
+  {
+    "idx": 21,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "10",
+    "tipo": "articulo",
+    "n_chars": 85,
+    "texto_preview": "Artículo 10° bis.- ELIMIN\nDecreto 202, ECONOMÍA\nArt. UNICO N° 12\nD.O. 20.08.2011\nADO."
+  },
+  {
+    "idx": 22,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "11",
+    "tipo": "articulo",
+    "n_chars": 478,
+    "texto_preview": "Artículo 11°.- La solicitud deberá ser presentada en cuadruplicado y dirigida a la Subsecretaría para las\nDecreto 202, E"
+  },
+  {
+    "idx": 23,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "12",
+    "tipo": "articulo",
+    "n_chars": 1114,
+    "texto_preview": "Artículo 12º. La solicitud será ingresada y acogida a tramitación sólo cuando reúna todos los antecedentes señalados en "
+  },
+  {
+    "idx": 24,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "12",
+    "tipo": "articulo",
+    "n_chars": 85,
+    "texto_preview": "Artículo 12° bis.- ELIMINAD\nDecreto 202, ECONOMÍA\nArt. UNICO N° 15\nD.O. 20.08.2011\nO."
+  },
+  {
+    "idx": 25,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "13",
+    "tipo": "articulo",
+    "n_chars": 590,
+    "texto_preview": "Artículo 13.- INCISO\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 4, a)\nD.O. 24.07.2015\nELIMINADO.\nAcogida a trámite la solicitud"
+  },
+  {
+    "idx": 26,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "14",
+    "tipo": "articulo",
+    "n_chars": 2796,
+    "texto_preview": "Artículo 14. Recibida la solicitud de concesión de acuicultura\nDecreto 202, ECONOMÍA\nArt. UNICO N° 17 a)\nD.O. 20.08.2011"
+  },
+  {
+    "idx": 27,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "67",
+    "tipo": "articulo",
+    "n_chars": 1492,
+    "texto_preview": "artículo 67 de la ley y en los reglamentos\na que se refieren los artículos 86 y 87 de\nla ley;\nh) el área solicitada no d"
+  },
+  {
+    "idx": 28,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 2142,
+    "texto_preview": "Art. 1º Nº 5\nD.O. 11.10.2006\nrechazo a que se refieren los incisos anteriores, la Subsecretaría de Pesca y Acuicultura s"
+  },
+  {
+    "idx": 29,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "14",
+    "tipo": "articulo",
+    "n_chars": 2879,
+    "texto_preview": "Artículo 14 bis. Para verificar el cumplimiento de los\nDecreto 202, ECONOMÍA\nArt. UNICO N° 18\nD.O. 20.08.2011\nrequisitos"
+  },
+  {
+    "idx": 30,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "14",
+    "tipo": "articulo",
+    "n_chars": 3089,
+    "texto_preview": "Artículo 14 ter. En la misma carta certificada a que se refiere\nDecreto 202, ECONOMÍA\nArt. UNICO N° 18\nD.O. 20.08.2011\ne"
+  },
+  {
+    "idx": 31,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "15",
+    "tipo": "articulo",
+    "n_chars": 1232,
+    "texto_preview": "Artículo 15. Una vez entregado el plano que cumpla con los requisitos indicados\nDecreto 202, ECONOMÍA\nArt. UNICO N° 19\nD"
+  },
+  {
+    "idx": 32,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "15",
+    "tipo": "articulo",
+    "n_chars": 587,
+    "texto_preview": "Artículo 15 bis. Sin perjuicio de lo señalado en los artículos anteriores, en\nDecreto 202, ECONOMÍA\nArt. UNICO N° 20\nD.O"
+  },
+  {
+    "idx": 33,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "16",
+    "tipo": "articulo",
+    "n_chars": 947,
+    "texto_preview": "Artículo 16. Al Ministerio de Defensa Nacional le corresponderá\nDecreto 202, ECONOMÍA\nArt. UNICO N° 21\nD.O. 20.08.2011\ne"
+  },
+  {
+    "idx": 34,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "16",
+    "tipo": "articulo",
+    "n_chars": 27,
+    "texto_preview": "Artículo 16 bis. Eliminado."
+  },
+  {
+    "idx": 35,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "17",
+    "tipo": "articulo",
+    "n_chars": 485,
+    "texto_preview": "Artículo 17°.- El Ministerio de Defensa Nacional deberá remitir copia de todas las resoluciones que se otorguen para con"
+  },
+  {
+    "idx": 36,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "18",
+    "tipo": "articulo",
+    "n_chars": 1665,
+    "texto_preview": "Artículo 18. Las resoluciones de concesión\nDecreto 202, ECONOMÍA\nArt. UNICO N° 23 a)\nD.O. 20.08.2011\nde acuicultura será"
+  },
+  {
+    "idx": 37,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "19",
+    "tipo": "articulo",
+    "n_chars": 24,
+    "texto_preview": "Artículo 19. Eliminado.-"
+  },
+  {
+    "idx": 38,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "20",
+    "tipo": "articulo",
+    "n_chars": 562,
+    "texto_preview": "Artículo 20. El\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 2\nD.O. 18.11.2020\nproyecto técnico señalado en el artículo 10 letra "
+  },
+  {
+    "idx": 39,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "21",
+    "tipo": "articulo",
+    "n_chars": 4271,
+    "texto_preview": "Artículo 21.-La\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 3\nD.O. 18.11.2020\nmodificación de una concesión de acuicultura deber"
+  },
+  {
+    "idx": 40,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "21",
+    "tipo": "articulo",
+    "n_chars": 1441,
+    "texto_preview": "Artículo 21 bis. Los\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 4\nD.O. 18.11.2020\nsolicitantes y titulares de concesiones de ac"
+  },
+  {
+    "idx": 41,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "22",
+    "tipo": "articulo",
+    "n_chars": 640,
+    "texto_preview": "Artículo 22°.- Los titulares de concesiones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 28 a)\nD.O. 20.08.2011\nde acuicultura que"
+  },
+  {
+    "idx": 42,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "23",
+    "tipo": "articulo",
+    "n_chars": 674,
+    "texto_preview": "Artículo 23°.- En el evento de fallecimiento del titular de una concesión\nDecreto 202, ECONOMÍA\nArt. UNICO N° 29\nD.O. 20"
+  },
+  {
+    "idx": 43,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "24",
+    "tipo": "articulo",
+    "n_chars": 1742,
+    "texto_preview": "Artículo 24º.- La Autoridad Marítima informará por carta certificada al titular de la concesión\nDecreto 202, ECONOMÍA\nAr"
+  },
+  {
+    "idx": 44,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "24",
+    "tipo": "articulo",
+    "n_chars": 66,
+    "texto_preview": "Artículo 24° bis.- Las personas que no requieran\nDTO 165, ECONOMIA"
+  },
+  {
+    "idx": 45,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 438,
+    "texto_preview": "Art. 1° N° 16\nD.O. 07.12.2002\nde concesión de acuicultura, previo al inicio de sus operaciones, deberán solicitar su ins"
+  },
+  {
+    "idx": 46,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 150,
+    "texto_preview": "Art. 1º Nº 14\nD.O. 11.10.2006\ntécnico y la resolución de calificación ambiental que lo aprueba.\nDecreto 171, ECONOMÍA\nAr"
+  },
+  {
+    "idx": 47,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "25",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 25°.- Eliminado.\nDecreto 202, ECONOMÍA\nArt. UNICO N° 33\nD.O. 20.08.2011"
+  },
+  {
+    "idx": 48,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "26",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 26.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado."
+  },
+  {
+    "idx": 49,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "27",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 27.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado."
+  },
+  {
+    "idx": 50,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "28",
+    "tipo": "articulo",
+    "n_chars": 81,
+    "texto_preview": "Artículo 28°.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado."
+  },
+  {
+    "idx": 51,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "29",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 29.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado."
+  },
+  {
+    "idx": 52,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "30",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 30°.- Eliminado.\nDecreto 202, ECONOMÍA\nArt. UNICO N° 37\nD.O. 20.08.2011"
+  },
+  {
+    "idx": 53,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "30",
+    "tipo": "articulo",
+    "n_chars": 84,
+    "texto_preview": "Artículo 30 bis.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado."
+  },
+  {
+    "idx": 54,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "30",
+    "tipo": "articulo",
+    "n_chars": 233,
+    "texto_preview": "Artículo 30 ter.- Eli\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 18\nD.O. 24.07.2015\nminado.\nDecreto 171, ECONOMÍA\nArt. ÚNICO N°"
+  },
+  {
+    "idx": 55,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 29,
+    "texto_preview": "Art. 1º Nº 18\nD.O. 11.10.2006"
+  },
+  {
+    "idx": 56,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "31",
+    "tipo": "articulo",
+    "n_chars": 231,
+    "texto_preview": "Artículo 31°.- Son causales de caducidad de las concesiones de acuicultura las establecidas en el artículo 142 de la ley"
+  },
+  {
+    "idx": 57,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "32",
+    "tipo": "articulo",
+    "n_chars": 129,
+    "texto_preview": "Artículo 32°.- La paralización de las actividades deberá ser informada al Servicio, dentro de los 30 días siguientes de "
+  },
+  {
+    "idx": 58,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "33",
+    "tipo": "articulo",
+    "n_chars": 40,
+    "texto_preview": "Artículo 33°.- DEROGADO\nDTO 50, ECONOMIA"
+  },
+  {
+    "idx": 59,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 29,
+    "texto_preview": "Art. 1º Nº 19\nD.O. 11.10.2006"
+  },
+  {
+    "idx": 60,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "34",
+    "tipo": "articulo",
+    "n_chars": 616,
+    "texto_preview": "Artículo 34°.- La caducidad que declare por resolución el Subsecretario para las Fuerzas\nDecreto 202, ECONOMÍA\nArt. UNIC"
+  },
+  {
+    "idx": 61,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "35",
+    "tipo": "articulo",
+    "n_chars": 81,
+    "texto_preview": "Artículo 35°.- ELIMINAD\nDecreto 202, ECONOMÍA\nArt. UNICO N° 44\nD.O. 20.08.2011\nO."
+  },
+  {
+    "idx": 62,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "36",
+    "tipo": "articulo",
+    "n_chars": 588,
+    "texto_preview": "Artículo 36°.- Las concesiones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 45 a)\nD.O. 20.08.2011\nde acuicultura terminan por ren"
+  },
+  {
+    "idx": 63,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 29,
+    "texto_preview": "Art. 1º Nº 18\nD.O. 11.10.2006"
+  },
+  {
+    "idx": 64,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "37",
+    "tipo": "articulo",
+    "n_chars": 1076,
+    "texto_preview": "Artículo 37. Los titulares de concesiones de acuicultura pagarán anualmente una patente única de acuicultura d\nDecreto 2"
+  },
+  {
+    "idx": 65,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "38",
+    "tipo": "articulo",
+    "n_chars": 182,
+    "texto_preview": "Artículo 38°.- La patente se pagará en la Tesorería correspondiente a la jurisdicción del lugar de la concesión de\nDecre"
+  },
+  {
+    "idx": 66,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "39",
+    "tipo": "articulo",
+    "n_chars": 671,
+    "texto_preview": "Artículo 39°.- La Subsecretaría para las Fuerzas Armadas\nDecreto 202, ECONOMÍA\nArt. UNICO N° 48 a)\nD.O. 20.08.2011\nremit"
+  },
+  {
+    "idx": 67,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "40",
+    "tipo": "articulo",
+    "n_chars": 78,
+    "texto_preview": "Artículo 40°.-Deroga\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 5\nD.O. 18.11.2020\ndo."
+  },
+  {
+    "idx": 68,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "41",
+    "tipo": "articulo",
+    "n_chars": 78,
+    "texto_preview": "Artículo 41°.-Deroga\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 5\nD.O. 18.11.2020\ndo."
+  },
+  {
+    "idx": 69,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "42",
+    "tipo": "articulo",
+    "n_chars": 79,
+    "texto_preview": "Artículo 42°.- Deroga\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 5\nD.O. 18.11.2020\ndo."
+  },
+  {
+    "idx": 70,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "43",
+    "tipo": "articulo",
+    "n_chars": 79,
+    "texto_preview": "Artículo 43°.- Deroga\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 5\nD.O. 18.11.2020\ndo."
+  },
+  {
+    "idx": 71,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "44",
+    "tipo": "articulo",
+    "n_chars": 79,
+    "texto_preview": "Artículo 44°.- Deroga\nDecreto 114, ECONOMÍA\nArt. ÚNICO N° 5\nD.O. 18.11.2020\ndo."
+  },
+  {
+    "idx": 72,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "45",
+    "tipo": "articulo",
+    "n_chars": 255,
+    "texto_preview": "Artículo 45°.- Deróganse los artículos 15 y 16 del Decreto Supremo N° 175, de 1980, del Ministerio de Economía, Fomento "
+  },
+  {
+    "idx": 73,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 47,
+    "texto_preview": "Art. 1º Nº 18\nD.O. 11.10.2006\nDTO 165, ECONOMIA"
+  },
+  {
+    "idx": 74,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 29,
+    "texto_preview": "Art. 1° N° 17\nD.O. 07.12.2002"
+  },
+  {
+    "idx": 75,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "46",
+    "tipo": "articulo",
+    "n_chars": 80,
+    "texto_preview": "Artículo 46°.- ELIMINADO.\nDecreto 171, ECONOMÍA\nArt. ÚNICO N° 21\nD.O. 24.07.2015"
+  },
+  {
+    "idx": 76,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "46",
+    "tipo": "articulo",
+    "n_chars": 67,
+    "texto_preview": "Artículo 46° bis.- Toda comunicación requerimiento\nDTO 43, ECONOMIA"
+  },
+  {
+    "idx": 77,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 883,
+    "texto_preview": "Art. 1º Nº 9\nD.O. 13.09.2005\no notificación que se realice al solicitante, durante el trámite de otorgamiento o entrega "
+  },
+  {
+    "idx": 78,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "47",
+    "tipo": "articulo",
+    "n_chars": 1286,
+    "texto_preview": "Artículo 47°.- Las Autoridades Marítimas y las oficinas del Servicio tendrán las siguientes obligaciones, sin perjuicio "
+  },
+  {
+    "idx": 79,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "47",
+    "tipo": "articulo",
+    "n_chars": 70,
+    "texto_preview": "Artículo 47° bis.- La Autoridad Marítima comunicará,\nDTO 165, ECONOMIA"
+  },
+  {
+    "idx": 80,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 379,
+    "texto_preview": "Art. 1° N° 19\nD.O. 07.12.2002\ndentro de los primeros 15 días del mes, al Servicio Nacional de Pesca y Acuicultura, la nó"
+  },
+  {
+    "idx": 81,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "48",
+    "tipo": "articulo",
+    "n_chars": 421,
+    "texto_preview": "Artículo 48°.- La Dirección General de Territorio Marítimo y de Marina Mercante y el Servicio, deberán efectuar inspecci"
+  },
+  {
+    "idx": 82,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "49",
+    "tipo": "articulo",
+    "n_chars": 318,
+    "texto_preview": "Artículo 49°.- Los establecimientos de cultivos en áreas de propiedad privada que no requieran concesión\nDecreto 202, EC"
+  },
+  {
+    "idx": 83,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "50",
+    "tipo": "articulo",
+    "n_chars": 328,
+    "texto_preview": "Artículo 50°.- La mantención de la limpieza y del equilibrio ecológico de la zona concedida\nDecreto 202, ECONOMÍA\nArt. U"
+  },
+  {
+    "idx": 84,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "51",
+    "tipo": "articulo",
+    "n_chars": 124,
+    "texto_preview": "Artículo 51°.- Derógase el Decreto Supremo 549, de 1992, del Ministerio de Economía, Fomento y Reconstrucción, sin trami"
+  },
+  {
+    "idx": 85,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "1",
+    "tipo": "articulo",
+    "n_chars": 1521,
+    "texto_preview": "Artículo 1° Transitorio: En los casos a que se\nDS 604,EC.\n1995,Art.1°,\nrefiere el artículo 5° transitorio inciso 6° de l"
+  },
+  {
+    "idx": 86,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "2",
+    "tipo": "articulo",
+    "n_chars": 780,
+    "texto_preview": "Artículo 2° Transitorio: En los casos a que se\nDS 604,EC.\n1995,Art.1°\nrefiere el artículo 5° transitorio inciso 7° de la"
+  },
+  {
+    "idx": 87,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "3",
+    "tipo": "articulo",
+    "n_chars": 279,
+    "texto_preview": "Artículo 3° transitorio. Las autorizaciones\nDecreto 202, ECONOMÍA\nArt. UNICO N° 56\nD.O. 20.08.2011\nde acuicultura vigent"
+  },
+  {
+    "idx": 88,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "4",
+    "tipo": "articulo",
+    "n_chars": 94,
+    "texto_preview": "Artículo 4° transitorio. En el caso del\nDecreto 202, ECONOMÍA\nArt. UNICO N° 56\nD.O. 20.08.2011"
+  },
+  {
+    "idx": 89,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "84",
+    "tipo": "articulo",
+    "n_chars": 241,
+    "texto_preview": "artículo 84 de la ley se entenderá que pertenecen a la categoría de \"peces exóticos\" a la fecha de publicación del prese"
+  },
+  {
+    "idx": 90,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "5",
+    "tipo": "articulo",
+    "n_chars": 977,
+    "texto_preview": "Artículo 5° transitorio. La Subsecretaría no rechazará\nDecreto 202, ECONOMÍA\nArt. UNICO N° 56\nD.O. 20.08.2011\nlas solici"
+  },
+  {
+    "idx": 91,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "6",
+    "tipo": "articulo",
+    "n_chars": 262,
+    "texto_preview": "Artículo 6º transitorio. Las solicitudes de relocalización\nDecreto 202, ECONOMÍA\nArt. UNICO N° 56\nD.O. 20.08.2011\na que "
+  },
+  {
+    "idx": 92,
+    "id_norma": "11990",
+    "titulo_norma": "Reglamento de concesiones y autorizaciones de acuicultura",
+    "num_articulo": "7",
+    "tipo": "articulo",
+    "n_chars": 1034,
+    "texto_preview": "Artículo 7° transitorio. El plazo de paralización de actividades\nDecreto 202, ECONOMÍA\nArt. UNICO N° 56\nD.O. 20.08.2011\n"
+  },
+  {
+    "idx": 93,
+    "id_norma": "1116315",
+    "titulo_norma": "Reglamento sobre concesiones marítimas",
+    "num_articulo": "0",
+    "tipo": "texto_completo",
+    "n_chars": 5305,
+    "texto_preview": "SUSTITUYE REGLAMENTO SOBRE CONCESIONES MARÍTIMAS, FIJADO POR DECRETO SUPREMO (M) Nº 2, DE 2005, DEL MINISTERIO DE DEFENS"
+  },
+  {
+    "idx": 94,
+    "id_norma": "1157006",
+    "titulo_norma": "Reglamento sobre tratamiento y disposición final de desechos de acuicultura",
+    "num_articulo": "0",
+    "tipo": "preambulo",
+    "n_chars": 1932,
+    "texto_preview": "APRUEBA REGLAMENTO QUE ESTABLECE CONDICIONES SOBRE TRATAMIENTO Y DISPOSICIÓN FINAL DE DESECHOS PROVENIENTES DE ACTIVIDAD"
+  },
+  {
+    "idx": 95,
+    "id_norma": "1157006",
+    "titulo_norma": "Reglamento sobre tratamiento y disposición final de desechos de acuicultura",
+    "num_articulo": "13",
+    "tipo": "articulo",
+    "n_chars": 2781,
+    "texto_preview": "artículo 13 transitorio\nde la\nley 20.434\n, sin perjuicio de las normas vigentes sobre tratamiento y disposición de desec"
+  }
+]

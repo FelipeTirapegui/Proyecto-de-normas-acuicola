@@ -1,0 +1,87 @@
+{
+  "fecha_procesamiento": "2026-04-22T16:52:47.674719",
+  "n_normativas": 7,
+  "n_segmentos_total": 96,
+  "n_tokens_total": 10817,
+  "n_chars_total": 80684,
+  "tokens_max_segmento": 750,
+  "tokens_avg_segmento": 112.7,
+  "pct_segmentos_gt512": 3.1,
+  "vocabulario_size": 1670,
+  "top30_terminos": [
+    "decreto",
+    "art",
+    "artículo",
+    "economía",
+    "acuicultura",
+    "ley",
+    "unico",
+    "concesión",
+    "subsecretaría",
+    "pesca",
+    "deberá",
+    "concesiones",
+    "reglamento",
+    "único",
+    "ministerio",
+    "resolución",
+    "proyecto",
+    "técnico",
+    "nacional",
+    "general",
+    "caso",
+    "ambiental",
+    "solicitud",
+    "sobre",
+    "plazo",
+    "servicio",
+    "titulo",
+    "inciso",
+    "deberán",
+    "título"
+  ],
+  "por_norma": [
+    {
+      "id_norma": "13315",
+      "titulo": "Ley general de pesca y acuicultura",
+      "n_segmentos": 2,
+      "chars_limpios": 2095
+    },
+    {
+      "id_norma": "30667",
+      "titulo": "Ley sobre bases generales del medio ambiente",
+      "n_segmentos": 1,
+      "chars_limpios": 3184
+    },
+    {
+      "id_norma": "192512",
+      "titulo": "Reglamento ambiental para la acuicultura",
+      "n_segmentos": 1,
+      "chars_limpios": 2960
+    },
+    {
+      "id_norma": "194194",
+      "titulo": "Reglamento de medidas de protección, control y erradicación de enfermedades de alto riesgo para las especies hidrobiológicas",
+      "n_segmentos": 3,
+      "chars_limpios": 2002
+    },
+    {
+      "id_norma": "11990",
+      "titulo": "Reglamento de concesiones y autorizaciones de acuicultura",
+      "n_segmentos": 86,
+      "chars_limpios": 60513
+    },
+    {
+      "id_norma": "1116315",
+      "titulo": "Reglamento sobre concesiones marítimas",
+      "n_segmentos": 1,
+      "chars_limpios": 5305
+    },
+    {
+      "id_norma": "1157006",
+      "titulo": "Reglamento sobre tratamiento y disposición final de desechos de acuicultura",
+      "n_segmentos": 2,
+      "chars_limpios": 4714
+    }
+  ]
+}
